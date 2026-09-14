@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:getx_access_token_app/modules/home/home_view.dart';
 
-import '../../constants/constant_route.dart';
+import '../../routes/route_name.dart';
 import '../../data/local/token_storage.dart';
 
 class SplashController extends GetxController {
@@ -18,9 +18,9 @@ class SplashController extends GetxController {
     await Future.delayed(Duration(seconds: 3));
     loading.value = false;
     if (TokenStorage.getToken().isEmpty) {
-      Get.offNamed(ConstantRoute.login);
+      Get.offNamed(RouteName.login);
     } else {
-      Get.offNamed(ConstantRoute.home);
+      Get.offNamed(RouteName.home);
     }
   }
 }
